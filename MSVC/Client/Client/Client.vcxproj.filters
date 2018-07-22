@@ -13,12 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="源文件\ServerNet">
-      <UniqueIdentifier>{8a4a179a-08c0-487d-bd90-4a0feee8df88}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\Console">
-      <UniqueIdentifier>{fdb177b8-ef81-48da-adfe-63809eaf800d}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -27,25 +21,13 @@
     <ClInclude Include="targetver.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\ClientNet\ServerNet.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Console\Console.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Server.cpp">
+    <ClCompile Include="Client.cpp">
       <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\ClientNet\ServerNet.cpp">
-      <Filter>源文件\ServerNet</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Console\Console.cpp">
-      <Filter>源文件\Console</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
