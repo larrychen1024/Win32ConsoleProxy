@@ -13,12 +13,18 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="源文件\ServerNet">
+      <UniqueIdentifier>{ece1d17f-6db4-435b-ba1f-eb533b2f5916}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\ServerNet\ServerNet.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -28,6 +34,9 @@
     </ClCompile>
     <ClCompile Include="Server.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\ServerNet\ServerNet.cpp">
+      <Filter>源文件\ServerNet</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
