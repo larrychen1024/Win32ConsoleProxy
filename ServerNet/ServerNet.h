@@ -7,6 +7,7 @@
 #include <strsafe.h>
 #include <iostream>
 #include <string>
+#include "Console.h"
 #pragma comment(lib, "Ws2_32.lib")
 #define SOCKET_BUFSIZE 4096
 #define PIPE_BUFSIZE 4096
@@ -22,16 +23,8 @@ public:
 
 	// 更新数据
 	DWORD ServerRun();
-	BOOL CreateChildProcess();
-	BOOL ReadFromPipe(CHAR * buff, DWORD buffSize);
-	BOOL WriteToPipe(CHAR * msg, DWORD msgLength);
 
-	DWORD ErrorExit(LPCTSTR lpszFunction);
 private:
 	SOCKET m_sock;
-	HANDLE m_hChildStd_IN_Rd;
-	HANDLE m_hChildStd_IN_Wr;
-	HANDLE m_hChildStd_OUT_Rd;
-	HANDLE m_hChildStd_OUT_Wr;
-	HANDLE m_hChildProcess;
+	Console m_console;
 };

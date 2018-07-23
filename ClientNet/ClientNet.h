@@ -15,7 +15,7 @@ public:
 	// 发送信息
 	int ClientSend(const char* msg, int len);
 	// 接收信息
-	int ClientRecv(PCHAR msg);
+	int ClientRecv(PCHAR pBuf, DWORD bufSize);
 	// 关闭连接
 	void ClientClose();
 

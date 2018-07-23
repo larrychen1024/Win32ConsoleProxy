@@ -16,6 +16,9 @@
     <Filter Include="源文件\ServerNet">
       <UniqueIdentifier>{ece1d17f-6db4-435b-ba1f-eb533b2f5916}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\Console">
+      <UniqueIdentifier>{b655a95b-0ec0-4c32-ab37-5b405e428d46}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -25,6 +28,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\ServerNet\ServerNet.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Console\Console.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -37,6 +43,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\ServerNet\ServerNet.cpp">
       <Filter>源文件\ServerNet</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Console\Console.cpp">
+      <Filter>源文件\Console</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

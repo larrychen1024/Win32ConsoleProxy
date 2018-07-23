@@ -69,6 +69,7 @@ int ClientNet::ClientSend(const char* msg, int len)
 	char * buf = (char *)malloc(bufSize);
 		
 	ZeroMemory(buf, bufSize);
+
 	// windows命令以换号回车结束
 	sprintf_s(buf, bufSize, "%s\r\n", msg);
 	
@@ -89,14 +90,48 @@ int ClientNet::ClientSend(const char* msg, int len)
 	
 	return rlt;
 }
-int ClientNet::ClientRecv(PCHAR msg)
+
+/*客户端发送消息*/
+int ClientNet::ClientSend(const char* msg, int len)
 {
 	int rlt = 0;
 
 	int iErrMsg = 0;
+	int bufSize = len + 3 + 2; // 换行符+回车符+NULL字符
+	char * buf = (char *)malloc(bufSize);
+		
+	ZeroMemory(buf, bufSize);
+
+	// windows命令以换号回车结束
+	sprintf_s(buf, bufSize, "%s\r\n", msg);
+	
+	// 指定sock发送消息
+	iErrMsg = send(m_sock, buf, bufSize, 0);
+	if (iErrMsg < 0)// 发送失败
+	{
+		printf("send msg failed with error: %d\n", iErrMsg);
+		rlt = 1;
+	}
+	else
+	{
+		//printf("send msg successfully\n");
+		//
+	}
+	
+	free(buf);
+	
+	return rlt;
+}
+
+int ClientNet::ClientRecv(PCHAR pBuf, DWORD bufSize)
+{
+	int rlt = 0;
+	int iErrMsg = 0;
+
+	ZeroMemory(pBuf, bufSize);
 
 	// 指定sock发送消息
-	iErrMsg = recv(m_sock, msg, BUF_SIZE, 0);
+	iErrMsg = recv(m_sock, pBuf, bufSize, 0);
 	if (iErrMsg < 0)// 发送失败
 	{
 		printf("recv msg failed with error: %d\n", iErrMsg);

@@ -89,6 +89,7 @@ BOOL Console::CreateChildProcess()
 
 BOOL Console::Write(const CHAR * msg, DWORD msgLength) 
 {
+	/*
 	DWORD bufSize = msgLength + sizeof(CMD_POSTFIX);				// »»ÐÐ·û+»Ø³µ·û+NULL×Ö·û
 	CHAR * buff = (CHAR *)malloc(bufSize);
 	ZeroMemory(buff, bufSize);
@@ -99,7 +100,11 @@ BOOL Console::Write(const CHAR * msg, DWORD msgLength)
 	bSuccess = WriteFile(m_hChildStd_IN_Wr, buff, strlen(buff), &dwWritten, NULL);
 	
 	free(buff);
-
+	return bSuccess;
+	*/
+	DWORD dwWritten;
+	BOOL bSuccess = TRUE;
+	bSuccess = WriteFile(m_hChildStd_IN_Wr, msg, msgLength, &dwWritten, NULL);
 	return bSuccess;
 }
 
